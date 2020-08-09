@@ -1,3 +1,6 @@
+## 3.0.0
+Added pagination.
+
 ## 2.0.0
 Added image Upload in a post
 Added image change during post edit.
