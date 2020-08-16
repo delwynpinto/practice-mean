@@ -1,3 +1,6 @@
+## 4.0.0
+Added Autorization ( Sign up & Login ) using authentication token
+
 ## 3.0.0
 Added pagination.
 
