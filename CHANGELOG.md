@@ -1,5 +1,8 @@
+## 5.0.0
+Added authentication. Users can edit and delete only the posts they created.
+
 ## 4.0.0
-Added Autorization ( Sign up & Login ) using authentication token
+Added Authentication ( Sign up & Login ) using authentication token
 
 ## 3.0.0
 Added pagination.
