@@ -1,3 +1,7 @@
+## 6.0.0
+Added error interceptor.
+Added error handling on client and server side.
+
 ## 5.0.0
 Added authentication. Users can edit and delete only the posts they created.
 
