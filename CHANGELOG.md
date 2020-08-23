@@ -1,3 +1,10 @@
+## 7.0.0
+Added controllers.
+Seperated middleware code.
+Created Angular feature modules.
+Added lazy loading.
+Using global configurations in front and backend.
+
 ## 6.0.0
 Added error interceptor.
 Added error handling on client and server side.
