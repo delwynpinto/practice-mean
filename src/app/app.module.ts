@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
-import { AngularMaterialModule } from './anular-material.module';
+import { AngularMaterialModule } from './angular-material.module';
 import { PostsModule } from './posts/posts.module';
 
 @NgModule({
