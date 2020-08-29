@@ -1,3 +1,6 @@
+## 7.0.0
+Added code optimizations & changes for deployment using AWS EC2 for the backend & S3 for the frontend.
+
 ## 6.0.0
 Added error interceptor.
 Added error handling on client and server side.
