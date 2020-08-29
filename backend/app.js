@@ -22,7 +22,8 @@ mongoose.connect(
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
-app.use("/images", express.static(path.join("images")));
+app.use("/images", express.static(path.join(__dirname, "images")));
+app.use("/", express.static(path.join(__dirname, "angular")));
 
 app.use((req, res, next) =>{
   res.setHeader(
@@ -37,9 +38,10 @@ app.use((req, res, next) =>{
   next();
 });
 
-//Mongo CLuster user password : w1TNc6WsQUt8N7zt
-
 app.use("/api/posts", postRoutes);
 app.use("/api/user", userRoutes);
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "angular", "index.html"));
+});
 
 module.exports  = app;

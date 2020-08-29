@@ -1,3 +1,6 @@
+## -
+Code changes to deploy both parts of the application as a single solution on AWS EC2
+
 ## 7.0.0
 Added code optimizations & changes for deployment using AWS EC2 for the backend & S3 for the frontend.
 
