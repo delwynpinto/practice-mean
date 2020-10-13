@@ -9,6 +9,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 
+// Module containing all Angular Material imports. Exported in this module, so they can be imported in app.module
+
 @NgModule({
   exports: [
     MatInputModule,
