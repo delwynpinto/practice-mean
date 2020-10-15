@@ -21,6 +21,8 @@ export class PostListComponent implements OnInit, OnDestroy {
   pageSizeOptions = [1, 2, 5, 10];
   userIsAuthenticated = false;
   userId: string;
+
+  // Used to manage subscriptions to posts & auth observables respectively
   private postsSub: Subscription;
   private authStatusSub: Subscription;
 

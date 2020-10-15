@@ -42,6 +42,9 @@ export class AuthService {
   Makes API call to create a new user.
   Success response : navigates user to root page
   Error response : emits a false value to the auth status observer
+
+  Does not return value to the calling function.
+  Instead add a next value to the subject, which is returned as an Observable by another function.
   */
   createUser(email: string, password: string) {
     const authData: AuthData = {email: email, password: password};
