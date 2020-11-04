@@ -7,6 +7,7 @@ const extractFile = require("../middleware/file");
 
 const router = express.Router();
 
+// Post APIs with their respective middlewares
 router.post("", checkAuth, extractFile, PostContoller.createPost);
 
 router.put("/:id", checkAuth, extractFile, PostContoller.updatePost);

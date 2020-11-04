@@ -4,7 +4,10 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
 exports.createUser = (req, res, next) => {
+  // Generates a hash of the password
   bcrypt.hash(req.body.password, 10).then(hash => {
+
+    // Object of model User
     const user = new User({
       email: req.body.email,
       password: hash
@@ -35,6 +38,8 @@ exports.userLogin = (req, res, next) => {
         });
       }
       fetchedUser = user;
+
+      // Comparing the password entered with the one returned from MongoDB
       return bcrypt.compare(req.body.password, user.password);
     })
     .then(result => {
@@ -43,6 +48,8 @@ exports.userLogin = (req, res, next) => {
           message: "Auth failed"
         });
       }
+
+      // Creating a JSON token that expires in 1 hour
       const token = jwt.sign(
         { email: fetchedUser.email, userId: fetchedUser._id },
         process.env.JWT_KEY,
