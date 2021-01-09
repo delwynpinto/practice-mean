@@ -2,14 +2,13 @@
 
 This application was created with the intention of serving as a practice for working with the MEAN stack. The application manages posts from multiple users including creation, modifications & deletions once they have signed up.
 
-The application has been deployed in 2 ways using AWS services viz.<br>
-[Seperated Deployment](http://practice-mean-angular.s3-website-us-east-1.amazonaws.com/) with Angular on S3 & NodeJS on EC2
-
-[Integrated deployment](http://practicemeanintegrated-env.eba-sdevwkhx.us-east-1.elasticbeanstalk.com/) with Angular and NodeJS on EC2<br>
-Code in branch : integrated-deployment
-
 Atlas has been used for the MongoDB database.<br>
 Angular Material has been used as the UI framework.
+
+[Application has been deployed](http://practice-mean-angular.s3-website-us-east-1.amazonaws.com/) using AWS Elastic Beanstalk for the server, S3 for the static hosting of the front end.
+
+Application has also been created for integrated-deployment but isn't deployed yet.
+Code in branch : [integrated-deployment](https://github.com/delwynpinto/practice-mean/tree/integrated-deployment)
 
 The applications makes use of multiple features available with the technologies used in the stack as follows
 
