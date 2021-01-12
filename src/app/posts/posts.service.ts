@@ -7,15 +7,24 @@ import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { Post } from './post.model';
 
+// Fetching URL from environment variable
 const BACKEND_URL = environment.apiUrl + "/posts/";
 
 @Injectable({providedIn: 'root'})
+
+// Module containing all posts related API Requests
+
 export class PostsService {
   private posts : Post[] = [];
   private postsUpdated = new Subject<{posts: Post[], postCount: number}>();
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  /*
+  Method is called anytime multiple posts have to be fetched.
+  The response is added to a subject instead of being returned to the calling function.
+  The subject is returned as an Observable by another function, which posts list component subscribes to.
+  */
   getPosts(postsPerPage: number, currentPage: number) {
     const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
     this.http
@@ -47,6 +56,7 @@ export class PostsService {
     });
   }
 
+  // Returns subject as an Observable to be subscribed to in posts components
   getPostUpdateListener() {
     return this.postsUpdated.asObservable();
   }
@@ -72,6 +82,11 @@ export class PostsService {
     });
   }
 
+  /*
+  Condition used depending on the data to be uploaded.
+  The image object is sent, only when a new image is being uploaded.
+  For an existing image, only its path on the server is sent.
+  */
   updatePost(id:string, title: string, content: string, image: File | string) {
     let postData: Post | FormData;
     if(typeof(image) == 'object') {

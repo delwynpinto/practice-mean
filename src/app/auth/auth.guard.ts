@@ -7,6 +7,10 @@ import { AuthService } from './auth.service';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
+  /*
+  Responsible for checking if user is authenticated to access the routes.
+  If user isn't authenticated for instance when token timer has expired, this guard will redirect user to the login page.
+  */
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(

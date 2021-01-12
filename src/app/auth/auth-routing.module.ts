@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
 ]
 
+// Defines routes to login & signup components
+
 @NgModule({
   imports: [
     RouterModule.forChild(routes)

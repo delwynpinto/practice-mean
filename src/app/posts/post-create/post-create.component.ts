@@ -24,6 +24,8 @@ export class PostCreateComponent implements OnInit, OnDestroy{
   isLoading = false;
   private mode = 'create';
   private postId: string;
+
+  // Handles the subscription to auth observable
   private authStatusSUb: Subscription;
 
   constructor(public postsService : PostsService, public route: ActivatedRoute, private authService: AuthService) { }
@@ -34,6 +36,8 @@ export class PostCreateComponent implements OnInit, OnDestroy{
         this.isLoading = false;
       }
     );
+
+    // Angular reactive form
     this.form = new FormGroup({
       'title': new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)]

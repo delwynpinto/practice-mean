@@ -11,6 +11,10 @@ const routes: Routes = [
   { path: 'edit/:postId', component: PostCreateComponent, canActivate: [AuthGuard] },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m=> m.AuthModule)}
 ];
+
+// Module implments Angular router, routes & route guards.
+// To be imported in App Module
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

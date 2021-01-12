@@ -1,7 +1,10 @@
 const Post = require("../models/post");
 
 exports.createPost = (req, res, next) => {
+  // Used to get the path of image to be uploaded
   const url = req.protocol + "://" + req.get("host");
+
+  // Object of Post model
   const post = new Post({
     title: req.body.title,
     content: req.body.content,
@@ -28,7 +31,10 @@ exports.createPost = (req, res, next) => {
 
 exports.updatePost = (req, res, next) => {
   let imagePath = req.body.imagePath;
+
+  // Condition is met only when the image in the post if modified
   if (req.file) {
+    // Getting the path of image to be uploaded
     const url = req.protocol + "://" + req.get("host");
     imagePath = url + "/images/" + req.file.filename;
   }
@@ -55,8 +61,12 @@ exports.updatePost = (req, res, next) => {
 };
 
 exports.getPosts = (req, res, next) => {
+
+  // Pagination parameters
   const pageSize = +req.query.pagesize;
   const currentPage = +req.query.page;
+
+  // Object of the Post model
   const postQuery = Post.find();
   let fetchedPosts;
   if (pageSize && currentPage) {
